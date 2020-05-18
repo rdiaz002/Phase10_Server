@@ -603,6 +603,6 @@ var fakeDeck = [
   { type: "Blue", number: "0" },
 ];
 
-const port = 13337;
+const port = 80;
 console.log(server);
 server.listen(port);
