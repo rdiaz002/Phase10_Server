@@ -1,8 +1,9 @@
-var fs = require("fs");
-var https = require("https");
-https.globalAgent.options.rejectUnauthorized = false;
 
-const io = require("socket.io")();
+var http = require("http");
+
+const server = http.createServer((req,res)=>{res.writeHead(200)});
+  
+const io = require("socket.io")(server);
 const Deque = require("collections/deque");
 const Random = require("random-js").Random;
 const random = new Random();
@@ -601,4 +602,4 @@ var fakeDeck = [
 
 const port = 13337;
 console.log(process.env.PORT);
-io.listen(process.env.PORT);
+server.listen(process.env.PORT);
