@@ -2,11 +2,7 @@ var fs = require("fs");
 var https = require("https");
 https.globalAgent.options.rejectUnauthorized = false;
 
-var server = https.createServer({
-  key: fs.readFileSync("./server.key"),
-  cert: fs.readFileSync("./server.cert"),
-});
-const io = require("socket.io")(server);
+const io = require("socket.io");
 const Deque = require("collections/deque");
 const Random = require("random-js").Random;
 const random = new Random();
