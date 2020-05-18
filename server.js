@@ -1,8 +1,9 @@
-
 var http = require("http");
+const PORT = process.env.PORT || 13337;
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+});
 
-const server = http.createServer((req,res)=>{res.writeHead(200)});
-  
 const io = require("socket.io")(server);
 const Deque = require("collections/deque");
 const Random = require("random-js").Random;
@@ -551,7 +552,7 @@ const setupClients = (client) => {
 
 io.on("connection", (client) => {
   client.emit("PLAYER_ID", client.client.id);
-  console.log(client);
+
   if (gameState == "Running") {
     client.emit("ROOM_INFO", { hostID, playerList, gameState: "FULL" });
     client.disconnect();
@@ -600,6 +601,4 @@ var fakeDeck = [
   { type: "Blue", number: "0" },
 ];
 
-const port = 13337;
-console.log(process.env.PORT);
-server.listen(process.env.PORT);
+server.listen(PORT);
