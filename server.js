@@ -550,7 +550,7 @@ const setupClients = (client) => {
 
 io.on("connection", (client) => {
   client.emit("PLAYER_ID", client.client.id);
-
+  console.log(client);
   if (gameState == "Running") {
     client.emit("ROOM_INFO", { hostID, playerList, gameState: "FULL" });
     client.disconnect();
