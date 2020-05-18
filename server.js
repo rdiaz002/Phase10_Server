@@ -2,7 +2,7 @@ var fs = require("fs");
 var https = require("https");
 https.globalAgent.options.rejectUnauthorized = false;
 
-const io = require("socket.io");
+const io = require("socket.io")();
 const Deque = require("collections/deque");
 const Random = require("random-js").Random;
 const random = new Random();
