@@ -605,4 +605,4 @@ var fakeDeck = [
 
 const port = 13337;
 console.log();
-server.listen(port,"https://ronnys-phase10.herokuapp.com");
+server.listen(port);
