@@ -9,5 +9,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "collections": "^5.1.11",
+    "random-js": "^2.1.0",
+    "socket.io": "^2.3.0"
+  }
 }

@@ -604,4 +604,5 @@ var fakeDeck = [
 ];
 
 const port = 13337;
+console.log(server);
 server.listen(port);
