@@ -605,4 +605,4 @@ var fakeDeck = [
 
 const port = 13337;
 console.log();
-server.listen(port);
+server.listen(process.env.PORT);
