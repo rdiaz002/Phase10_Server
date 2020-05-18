@@ -1,7 +1,9 @@
 
 var http = require("http");
-
-const server = http.createServer((req,res)=>{res.writeHead(200)});
+var express = require('express');
+const server = express().use((req,res)=>
+  res.sendFile('./index.html',{root:__dirname})
+).listen(process.env.PORT,()=>{console.log("listening")});
   
 const io = require("socket.io")(server);
 const Deque = require("collections/deque");
@@ -602,4 +604,4 @@ var fakeDeck = [
 
 const port = 13337;
 console.log(process.env.PORT);
-server.listen(process.env.PORT);
+// server.listen(process.env.PORT);
