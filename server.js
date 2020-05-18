@@ -6,7 +6,7 @@ var server = https.createServer({
   key: fs.readFileSync("./server.key"),
   cert: fs.readFileSync("./server.cert"),
 });
-const io = require("socket.io")(server,{agent:false,origins:'*https://localhost:*',transport:['websocket']});
+const io = require("socket.io")(server,{agent:false,origins:'*http://localhost:*',transport:['websocket']});
 const Deque = require("collections/deque");
 const Random = require("random-js").Random;
 const random = new Random();
