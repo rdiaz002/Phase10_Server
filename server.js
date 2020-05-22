@@ -518,7 +518,8 @@ const setupClients = (client) => {
   });
 
   //disconnect
-  client.on("disconnect", () => {
+  client.on("disconnect", (reason) => {
+    console.log(client.client.id +" "+reason);
     var index = playerList.findIndex((usr) => usr.id == client.client.id);
     var handIndex = playersHands.findIndex(
       (hand) => hand.id == client.client.id
